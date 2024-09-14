@@ -3,7 +3,7 @@ import { FaUser, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
 import NavItem from './NavItem';
 import BurgerNavItem from './BurgerNavItem';
 
-const Navbar = () => {
+const NavBar = () => {
   //state and function for Hmaburger menu
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
 
-    <nav className="bg-gradient-to-t from-red-400 to-red-300 shadow-lg py-4 font-playfair font-semibold">
+    <nav className="bg-gradient-to-b from-red-400 to-white shadow-lg py-4 font-playfair font-semibold">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -122,4 +122,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
