@@ -1,8 +1,11 @@
 import React from 'react'
+import NavBar from './components/Header/NavBar'
 
 function App() {
   return (
-    <div>App</div>
+    <div>
+      <NavBar/>
+    </div>
   )
 }
 
