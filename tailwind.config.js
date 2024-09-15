@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         cinzel: ["Cinzel Decorative", 'serif'], 
         playfair: ['Playfair Display', 'serif'], 
+        playball:['Playball','cursive']
       },
     },
   },
