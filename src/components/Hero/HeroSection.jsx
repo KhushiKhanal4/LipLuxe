@@ -70,7 +70,7 @@ function HeroSection() {
 
         {/* Hero Text */}
         <div className="w-full lg:w-1/2 text-center md:text-left flex flex-col justify-center px-4">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight font-cinzel animate-fade-down animate-once animate-duration-[2000ms]">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight tracking-wide font-cinzel animate-fade-down animate-once animate-duration-[2000ms]">
             Step into the World of Color
           </h1>
           <h2 className="text-lg md:text-xl lg:text-2xl font-medium text-gray-700 font-playfair animate-fade-right animate-once animate-duration-1500 animate-delay-[200ms]">
