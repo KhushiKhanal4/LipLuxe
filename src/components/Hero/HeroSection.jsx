@@ -55,7 +55,7 @@ function HeroSection() {
       <div className="w-full max-w-6xl flex flex-col md:flex-row-reverse lg:gap-20 items-center px-4 py-8 lg:py-16">
         {/* Image Slider */}
        
-          <Slider {...settings} className=" relative z-10 w-full lg:w-1/2 md:w-4/6 flex justify-center lg:justify-start mb-8 lg:mb-0 focus:outline-none">
+          <Slider {...settings} className=" relative z-10 w-full lg:w-1/2 md:w-4/6 flex justify-center lg:justify-start mb:5 sm:mb-8 lg:mb-0 focus:outline-none">
             {ImageList.map((data) => (
               <div key={data.id} className='w-32'>
                 <img
@@ -71,7 +71,7 @@ function HeroSection() {
         {/* Hero Text */}
         <div className="w-full lg:w-1/2 text-center md:text-left flex flex-col justify-center px-4">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 leading-tight font-cinzel animate-fade-down animate-once animate-duration-[2000ms]">
-            Step into a World of Color
+            Step into the World of Color
           </h1>
           <h2 className="text-lg md:text-xl lg:text-2xl font-medium text-gray-700 font-playfair animate-fade-right animate-once animate-duration-1500 animate-delay-[200ms]">
             Discover Lipsticks That Define Your Style
