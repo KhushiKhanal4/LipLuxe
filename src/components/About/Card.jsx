@@ -10,10 +10,10 @@ function Card() {
         <img 
         src="About\avocado-removebg-preview.png" 
         alt="" 
-        className='w-24 mt-9 mx-2'/>
+        className='w-24 mt-9 mx-2 lg:w-20'/>
       </div>
 
-      <div className='absolute w-44 h-44 sm:w-52 sm:h-52 bg-[#FEEACD] shadow-sm shadow-black transform translate-x-[60%] translate-y-[80%] sm:translate-x-1/2 sm:translate-y-[65%] z-20 rounded-full'>
+      <div className='absolute w-44 h-44 sm:w-52 sm:h-52 bg-[#FEEACD] shadow-sm shadow-black transform translate-x-[60%] translate-y-[80%] sm:translate-x-1/2 sm:translate-y-[65%] lg:translate-x-[44%] z-20 rounded-full'>
         <img src="About\ingredient.jpg" alt=""
         className='rounded-full p-1' />
       </div>
