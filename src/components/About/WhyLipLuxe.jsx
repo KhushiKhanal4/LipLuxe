@@ -12,7 +12,7 @@ function WhyLipLuxe() {
           variants={fadeIn("right", 0.2)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+          viewport={{ once: true, amount: 0.7 }}
           className="px-6 sm:px-6 lg:px-8 bg-[#f7f7f7]">
         <h1 className="text-center  text-2xl font-extrabold font-cinzel tracking-wider text-gray-800 my-10 underline underline-offset-1"
         >
@@ -27,7 +27,7 @@ function WhyLipLuxe() {
           variants={fadeIn("up", 0.1)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
+          viewport={{ once: true, amount: 0.7 }}
           className='sm:pl-10 lg:pl-8 xl:pl-0'>
           <Card
             title="Premium Quality Ingredients"
@@ -39,7 +39,7 @@ function WhyLipLuxe() {
           variants={fadeIn("up", 0.3)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}>
+          viewport={{ once: true, amount: 0.7 }}>
         <Card
           title="Long-lasting Formula"
           desc="Our lipsticks are crafted for long-lasting wear, offering a rich color payoff that stays vibrant and true throughout the day. Whether you're attending a meeting or enjoying a night out, Lip Luxe ensures your look remains flawless and fresh."
@@ -51,7 +51,7 @@ function WhyLipLuxe() {
           variants={fadeIn("up", 0.5)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}>
+          viewport={{ once: true, amount: 0.7 }}>
         <Card
           title="Vibrant & Diverse Shades"
           desc="Discover a spectrum of shades that cater to every skin tone and occasion. From bold reds to subtle nudes, our collection ensures you find the perfect hue that enhances your natural beauty and complements any look."
@@ -63,7 +63,7 @@ function WhyLipLuxe() {
           variants={fadeIn("up", 0.1)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}>
+          viewport={{ once: true, amount: 0.7 }}>
         <Card
           title="Hydration & Comfort"
           desc="Lip Luxe lipsticks are designed to keep your lips hydrated and comfortable all day long. Our blend of moisturizing ingredients prevents dryness, providing a creamy texture that feels light and luxurious on your lips."
@@ -74,7 +74,7 @@ function WhyLipLuxe() {
           variants={fadeIn("up", 0.3)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}>
+          viewport={{ once: true, amount: 0.7 }}>
         <Card
           title="Luxury Packaging"
           desc="Experience elegance with every application. Our lipsticks come in beautifully designed packaging that reflects our commitment to luxury and sophistication. The sleek, stylish cases are perfect for on-the-go glamour."
@@ -85,7 +85,7 @@ function WhyLipLuxe() {
           variants={fadeIn("up", 0.5)}
           initial="hidden"
           whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}>
+          viewport={{ once: true, amount: 0.7 }}>
         <Card
           title="Eco-friendly Initiatives"
           desc="At Lip Luxe, we are committed to sustainability. Our packaging is made from recyclable materials, and we are constantly working to reduce our environmental impact. Enjoy your beauty routine knowing you’re making a responsible choice."
