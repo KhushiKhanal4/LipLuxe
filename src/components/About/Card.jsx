@@ -9,7 +9,7 @@ function Card({
 }) {
   
   return (
-    <div class="relative w-96 h-96 perspective-1000">
+    <div className="relative w-96 h-96 perspective-1000">
       <div 
       className='absolute w-64 h-72 bg-gradient-to-t from-red-300 to-white shadow-sm  shadow-black transform rotate-x-12 rotate-y-6 z-10 rounded-xl '>
         <h1 className='text-center font-playball font-medium text-xl mt-4 mb-1 text-[#3E3A3A]'> {title}</h1>

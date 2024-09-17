@@ -11,12 +11,13 @@ const ImageList = [
   },
   {
     id: 2,
-    img: "/images/red2.png"
+    img: "/images/pink.png"
   },
   {
     id: 3,
-    img: "/images/pink.png"
+    img: "/images/red2.png"
   },
+  
   {
     id: 4,
     img: "/images/pinky.png"

@@ -9,7 +9,8 @@ function Footer() {
     return (
         <div className="w-full min-h-[70vh] px-7 lg:px-28 bg-gradient-to-t from-red-500 to-[#f7f7f7] flex flex-col py-9 shadow-inner mt-10 shadow-gray-500">
             <div>
-                <h1 className='font-bold font-cinzel text-shadow-sm text-[#1a1919] '>Support</h1>
+                <h1 className='font-bold font-cinzel text-shadow-sm text-[#1a1919] '
+                >Support</h1>
             </div>
 
             <hr className='text-[#504F4F] bg-[#504F4F] w-full h-0.5 my-2 hover:transform hover:-translate-y-1 hover:transition-all hover:duration-150 cursor-pointer' />
