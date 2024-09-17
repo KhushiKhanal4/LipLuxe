@@ -36,7 +36,7 @@ function WhyLipLuxe() {
             png=" About\avocado-removebg-preview.png" />
         </motion.div>
         <motion.div
-          variants={fadeIn("up", 0.5)}
+          variants={fadeIn("up", 0.3)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}>
@@ -48,7 +48,7 @@ function WhyLipLuxe() {
           </motion.div>
 
           <motion.div
-          variants={fadeIn("up", 1.0)}
+          variants={fadeIn("up", 0.5)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}>
@@ -71,7 +71,7 @@ function WhyLipLuxe() {
           png=" About\drops.png" />
           </motion.div>
           <motion.div
-          variants={fadeIn("up", 0.5)}
+          variants={fadeIn("up", 0.3)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}>
@@ -82,7 +82,7 @@ function WhyLipLuxe() {
           png=" About\slim.png" />
           </motion.div>
           <motion.div
-          variants={fadeIn("up", 1.5)}
+          variants={fadeIn("up", 0.5)}
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}>
