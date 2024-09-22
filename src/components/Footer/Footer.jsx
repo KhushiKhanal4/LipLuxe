@@ -13,7 +13,7 @@ function Footer() {
                 >Support</h1>
             </div>
 
-            <hr className='text-[#504F4F] bg-[#504F4F] w-full h-0.5 my-2 hover:transform hover:-translate-y-1 hover:transition-all hover:duration-150 cursor-pointer' />
+            <hr className='text-[#504F4F] bg-[#504F4F] w-full h-0.5 my-2 ' />
 
             <div className='grid grid-cols-2 lg:grid-cols-4'>
                 <h2 className='text-[#2b2b2b] text-sm font-semibold font-playfair my-0.5 hover:transform hover:-translate-y-1 hover:transition-all hover:duration-500 cursor-pointer'>Customer Support</h2>
