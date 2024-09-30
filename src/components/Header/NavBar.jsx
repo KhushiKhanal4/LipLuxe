@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { FaUser, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
-import NavItem from './NavItem';
 import BurgerNavItem from './BurgerNavItem';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   //state and function for Hmaburger menu
@@ -15,12 +15,12 @@ const NavBar = () => {
 
   return (
 
-    <motion.nav 
-    variants={fadeIn("up", 0.1)}
-    initial="hidden"
-    whileInView={"show"}
-    viewport={{ once: true, amount: 0.7 }}
-    className="bg-gradient-to-b from-red-400 to-[#ffffff00] shadow-lg py-4 font-playfair font-semibold">
+    <motion.nav
+      variants={fadeIn("up", 0.1)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: true, amount: 0.7 }}
+      className="bg-gradient-to-b from-red-400 to-[#ffffff00] shadow-lg py-4 font-playfair font-semibold">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -31,25 +31,37 @@ const NavBar = () => {
           </div>
           {/* Navbar for large screens */}
           <div className="hidden md:block">
+
             <div className="ml-10 flex items-baseline space-x-4">
-              <NavItem
-                title={"Home"}
-              />
-              <NavItem
-                title={"LipCare"}
-              />
-              <NavItem
-                title={"LipGloss"}
-              />
-              <NavItem
-                title={"Lipstick"}
-              />
+              
+              <NavLink to="/"
+              className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+               Home
+              </NavLink>
+
+              <NavLink to="/LipCare"
+               className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+              LipCare
+              </NavLink>
+
+              <NavLink to="/LipGloss"
+               className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+              LipGloss
+              </NavLink>
+
+              <NavLink to="/Lipstick"
+               className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+              Lipstick
+              </NavLink>
+
             </div>
+
           </div>
           {/* Icon buttons for large screens */}
           <div className="hidden md:block">
 
             <div className="ml-4 flex items-center md:ml-6">
+
 
               <button className="p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
                 <span className="sr-only">Sign up</span>
@@ -65,9 +77,9 @@ const NavBar = () => {
             </div>
 
           </div>
-          {/* HamBurger menu */}
-          <div className="-mr-2 flex md:hidden">
 
+          {/* HamBurger menu */}
+          <div className="-mr-2 flex gap-2 md:hidden">
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-red-800 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300"
@@ -90,23 +102,37 @@ const NavBar = () => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
+
+            <NavLink to="/">
             <BurgerNavItem
               title={"Home"}
             />
+            </NavLink>
+
+            <NavLink to="/LipCare">
             <BurgerNavItem
               title={"LipCare"}
             />
+            </NavLink>
+
+            <NavLink to="/LipGloss">
             <BurgerNavItem
               title={"LipGloss"}
             />
+            </NavLink>
+
+            <NavLink to="/Lipstick">
             <BurgerNavItem
               title={"Lipstick"}
             />
+            </NavLink>
+
           </div>
 
           <div className="pt-4 pb-3 border-t border-gray-300">
 
             <div className="flex items-center px-5">
+
 
               <button className="flex-shrink-0 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
                 <span className="sr-only">Sign up</span>
