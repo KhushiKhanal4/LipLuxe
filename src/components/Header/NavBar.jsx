@@ -142,10 +142,13 @@ const NavBar = () => {
                 <FaUser className="h-6 w-6" />
               </button>
 
+
+              <NavLink to="/Cart">
               <button className="ml-auto flex-shrink-0 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
                 <span className="sr-only">View cart</span>
                 <FaShoppingCart className="h-6 w-6" />
               </button>
+              </NavLink>
 
             </div>
 
