@@ -7,6 +7,7 @@ import Home from './components/Home/Home.jsx'
 import LipCare from './components/LipCare.jsx'
 import Lipgloss from './components/Lipgloss.jsx'
 import Lipstick from './components/Lipstick.jsx'
+import Cart from './components/Cart.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
        <Route path='LipCare' element={<LipCare/>}/>
        <Route path='Lipgloss' element={<Lipgloss/>}/>
        <Route path='Lipstick' element={<Lipstick/>}/>
+       <Route path='Cart' element={<Cart/>}/>
     </Route>
   )
 )
