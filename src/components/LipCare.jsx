@@ -23,7 +23,8 @@ function LipCare() {
                 <span className="text-lg sm:text-2xl font-bold text-gray-800 py-2">
                   {product.price}
                 </span>
-                <button className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br focus:ring-4 focus:ring-gray-600 font-medium rounded-lg text-md px-4 py-3 mt-2  w-1/2 ">
+                <button 
+                className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br  transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-1/2 shadow-md shadow-red-950">
                   Add to cart
                 </button>
               </div>
