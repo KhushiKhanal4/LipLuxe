@@ -13,7 +13,7 @@ const lipgloss = [
     },
     {
         id: 3,
-        Name: "Glossier Pink Shimmer Lip Gloss",
+        Name: "Glossier Pink Shimmer Gloss",
         price: " $18.00 USD",
         image: "./lipGloss/gloss3.png",
     },
@@ -49,3 +49,5 @@ const lipgloss = [
     },
 
 ]
+
+export default lipgloss;
