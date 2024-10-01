@@ -49,3 +49,5 @@ const lipstick = [
     },
 
 ]
+
+export default lipstick;
