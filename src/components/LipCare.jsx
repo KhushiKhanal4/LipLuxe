@@ -1,8 +1,11 @@
 import React from 'react'
+import Categories from './Hero/Categories'
 
 function LipCare() {
   return (
-    <div>LipCare</div>
+    <>
+    <Categories/>
+    </>
   )
 }
 

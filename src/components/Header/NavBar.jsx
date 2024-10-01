@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { FaUser, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
 import BurgerNavItem from './BurgerNavItem';
-import { motion } from 'framer-motion';
-import { fadeIn } from '../../variants';
+
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
@@ -15,11 +14,8 @@ const NavBar = () => {
 
   return (
 
-    <motion.nav
-      variants={fadeIn("up", 0.1)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: true, amount: 0.7 }}
+    <nav
+      
       className="bg-gradient-to-b from-red-400 to-[#ffffff00] shadow-lg py-4 font-playfair font-semibold">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -157,7 +153,7 @@ const NavBar = () => {
         </div>
       )}
 
-    </motion.nav>
+    </nav>
   );
 };
 
