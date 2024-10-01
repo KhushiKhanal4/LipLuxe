@@ -15,7 +15,7 @@ function Categories({
   viewport={{ once: true, amount: 0.7 }}
   className='mx-5 sm:mx-20 lg:mx-32 my-12 flex flex-col sm:flex-row-reverse justify-center items-center bg-gradient-to-b from-gray-100 to-gray-200 shadow-2xl rounded-lg overflow-hidden'>
 
-    <img src="./images/lipcare.jpg" 
+    <img src={img}
       alt="Lip Care Image"
       className='w-full sm:w-1/2 lg:w-1/3 object-cover rounded-l-lg border-2 border-gray-300 shadow-inner'/>
 
@@ -26,7 +26,7 @@ function Categories({
         whileInView={"show"}
         viewport={{ once: true, amount: 0.7 }}  
         className='font-extrabold bg-gradient-to-r from-gray-700 to-red-600 text-transparent bg-clip-text font-cinzel text-3xl sm:text-4xl leading-tight'>
-        Ready for Softer, Smoother Lips?
+        {title}
       </motion.h1>
 
       <motion.p
@@ -35,7 +35,7 @@ function Categories({
         whileInView={"show"}
         viewport={{ once: true, amount: 0.7 }}  
         className='font-medium text-gray-600 font-playfair text-md sm:text-lg mt-4'>
-        Discover our range of lip care products tailored to meet your every need.
+       {desc}
       </motion.p>
 
       <motion.button 
