@@ -8,7 +8,7 @@ function Categories({
 }
 ) {
     return (
-        <div className='mx-5 sm:mx-20 lg:mx-32 my-12 flex flex-col sm:flex-row-reverse justify-center items-center bg-gradient-to-b from-gray-100 to-gray-200 shadow-2xl rounded-lg overflow-hidden'>
+        <div className='mx-5 sm:mx-20 lg:mx-32 my-12 flex flex-col sm:flex-row-reverse justify-center items-center bg-gradient-to-tr from-red-50 to-red-200 shadow-2xl rounded-lg overflow-hidden'>
 
             <motion.img src={img}
                 alt="Lip Care Image"

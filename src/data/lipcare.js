@@ -37,3 +37,5 @@ const lipcare = [
     }
 
 ]
+
+export default lipcare;
