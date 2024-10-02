@@ -4,15 +4,21 @@ import { remove } from './store/CartSlice';
 
 function Cart() {
   const productCart = useSelector(state => state.cart.items);
-  const dispatch=useDispatch()
+
+  const dispatch=useDispatch();
+
   const removeFromCart =(id) =>{
     dispatch(remove(id))
   }
 
+  const totalPrice = productCart.reduce((accumulator, product) => {
+    return accumulator + (parseFloat(product.price) || 0); 
+  }, 0)
+
   const products = productCart.map(product => {
     return (
       
-      <div className='px-8 sm:px-10 lg:px-4 xl:px-20' key={product.id}> {/* Ensure unique key prop */}
+      <div className='px-8 sm:px-10 lg:px-4 xl:px-20' key={product.id}> 
       <div className="max-w-sm mx-auto my-3 sm:max-w-full lg:max-w-2xl">
         <div className="bg-gradient-to-br from-red-50 to-red-200 shadow-md rounded-lg overflow-hidden shadow-gray-400 sm:flex sm:flex-wrap sm:justify-between sm:items-center">
           
@@ -69,7 +75,7 @@ function Cart() {
         <div className='flex justify-between mx-5 sm:mx-10 lg:mx-12 xl:mx-20 2xl:mx-32'>
 
           <h3 className='font-semibold text-gray-800 font-sans'>Subtotal</h3>
-          <h3 className='font-semibold text-gray-800 font-sans'>$35.00 USD</h3>
+          <h3 className='font-semibold text-gray-800 font-sans'>${totalPrice} USD</h3>
 
         </div>
 
