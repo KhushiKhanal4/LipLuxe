@@ -12,7 +12,7 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
-  const cartProducts = useSelector(state => state.cart)
+  const cartProducts = useSelector(state => state.cart.items)
 
   return (
 
@@ -153,7 +153,7 @@ const NavBar = () => {
                 </button>
               </NavLink>
               <div className=
-                'bg-red-100 text-gray-800 px-3 ml-2 rounded-full text-center font-bold text-xl '>{cartProducts.length}</div>
+                'text-gray-800 bg-red-200 px-2.5  ml-2 rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
 
             </div>
 

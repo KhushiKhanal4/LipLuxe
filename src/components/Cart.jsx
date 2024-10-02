@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { remove } from './store/CartSlice';
 
 function Cart() {
-  const productCart = useSelector(state => state.cart);
+  const productCart = useSelector(state => state.cart.items);
   const dispatch=useDispatch()
   const removeFromCart =(id) =>{
     dispatch(remove(id))
