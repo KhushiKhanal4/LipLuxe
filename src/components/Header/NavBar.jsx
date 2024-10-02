@@ -58,7 +58,7 @@ const NavBar = () => {
           {/* Icon buttons for large screens */}
           <div className="hidden md:block">
 
-            <div className="ml-4 flex items-center md:ml-6">
+            <div className="ml-4 flex items-center md:ml-2">
 
 
               <button className="p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
@@ -76,7 +76,7 @@ const NavBar = () => {
                   </button>
                 </NavLink>
                  <div className=
-                'text-gray-800 bg-red-200 px-2.5  ml-2 rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
+                'text-gray-800 bg-red-200 px-2.5 ml-2 rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
 
               </div>
 
@@ -153,7 +153,7 @@ const NavBar = () => {
                 </button>
               </NavLink>
               <div className=
-                'text-gray-800 bg-red-200 px-2.5  ml-2 rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
+                'text-gray-800 bg-red-200 px-2.5 ml-2  rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
 
             </div>
 

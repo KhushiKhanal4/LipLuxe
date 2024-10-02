@@ -30,7 +30,7 @@ function Lipstick() {
 
               <div className="flex flex-col  mt-4">
                 <span className="text-lg sm:text-2xl font-bold text-gray-800 py-2">
-                  {product.price}
+                  ${product.price} USD
                 </span>
                 <button 
                 onClick={()=> addToCart(product)}

@@ -11,6 +11,7 @@ function Cart() {
 
   const products = productCart.map(product => {
     return (
+      
       <div className='px-8 sm:px-10 lg:px-4 xl:px-20' key={product.id}> {/* Ensure unique key prop */}
       <div className="max-w-sm mx-auto my-3 sm:max-w-full lg:max-w-2xl">
         <div className="bg-gradient-to-br from-red-50 to-red-200 shadow-md rounded-lg overflow-hidden shadow-gray-400 sm:flex sm:flex-wrap sm:justify-between sm:items-center">
@@ -60,6 +61,24 @@ function Cart() {
       <div className='grid grid-cols-1 gap-6 px-4'>
         {products}
       </div>
+
+      <div className='w-[90%] h-0.5 bg-gray-600 mx-auto mt-20 mb-6'></div>
+
+      <div className='flex flex-col'>
+
+        <div className='flex justify-between mx-5 sm:mx-10 lg:mx-12 xl:mx-20 2xl:mx-32'>
+
+          <h3 className='font-semibold text-gray-800 font-sans'>Subtotal</h3>
+          <h3 className='font-semibold text-gray-800 font-sans'>$35.00 USD</h3>
+
+        </div>
+
+        <button className='w-[90%] bg-gradient-to-tr from-green-700 to-green-300 text-lg text-white font-bold tracking-wider font-sans py-3 mx-auto mt-20 mb-6 rounded-lg hover:bg-gradient-to-b  '>
+          CHECK OUT
+        </button>
+
+      </div>
+      
     </>
   )
 }
