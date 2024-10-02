@@ -52,7 +52,9 @@ function Lipgloss() {
         title={"Ready to elevate your lip game?"}
         desc={"Discover our non-sticky, high-shine glosses for lips that stand out and stay hydrated."} />
 
-      <h1 className='font-extrabold bg-gradient-to-r from-gray-700 to-red-600 text-transparent bg-clip-text font-cinzel text-xl sm:text-2xl leading-tight text-center'> 8 Products </h1>
+      <h1 
+      id='shop'
+      className='font-extrabold bg-gradient-to-r from-gray-700 to-red-600 text-transparent bg-clip-text font-cinzel text-xl sm:text-2xl leading-tight text-center'> 8 Products </h1>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4'>
         {products}
       </div>

@@ -53,7 +53,9 @@ function LipCare() {
         desc={"Discover our range of lip care products tailored to meet your every need."}
       />
 
-      <h1 className='font-extrabold bg-gradient-to-r from-gray-700 to-red-600 text-transparent bg-clip-text font-cinzel text-xl sm:text-2xl leading-tight text-center mb-7'>
+      <h1 
+      id='shop'
+      className='font-extrabold bg-gradient-to-r from-gray-700 to-red-600 text-transparent bg-clip-text font-cinzel text-xl sm:text-2xl leading-tight text-center mb-7'>
         6 Products
       </h1>
 
