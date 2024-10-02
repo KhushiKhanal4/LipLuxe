@@ -1,48 +1,50 @@
+import { nanoid } from 'nanoid';
+
 const lipstick = [
     {
-        id: 1,
+        id: nanoid(),
         Name: "Classic Crimson Satin Lipstick",
         price: " $6.99 USD",
         image: "./lipstick/lipstick1.png",
     },
     {
-        id: 2,
+        id: nanoid(),
         Name: "Rose Gold Radiance Pink Lipstick",
         price: " $15.00 USD",
         image: "./lipstick/lipstick2.png",
     },
     {
-        id: 3,
+        id: nanoid(),
         Name: "Crimson Charm Liquid Lipstick",
         price: " $25.00 USD",
         image: "./lipstick/lipstick3.png",
     },
     {
-        id: 4,
+        id: nanoid(),
         Name: "Dusky Pink Charm Lipstick",
         price: " $10.00 USD",
         image: "./lipstick/lipstick4.png",
     },
     {
-        id: 5,
+        id: nanoid(),
         Name: "Classy Brick Red Lipstick",
         price: " $12.00 USD",
         image: "./lipstick/lipstick5.png",
     },
     {
-        id: 6,
+        id: nanoid(),
         Name: "Classic Rouge",
         price: " $7.00 USD",
         image: "./lipstick/lipstick6.png",
     },
     {
-        id: 7,
+        id: nanoid(),
         Name: "Matte Charm Pink Lipstick",
         price: " $28.99 USD",
         image: "./lipstick/lipstick7.png",
     },
     {
-        id: 8,
+        id: nanoid(),
         Name: "Radiant Rouge Metallic Lipstick",
         price: " $30.00 USD",
         image: "./lipstick/lipstick8.png",

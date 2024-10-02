@@ -1,36 +1,38 @@
+import { nanoid } from 'nanoid';
+
 const lipcare = [
     {
-        id: 1,
+        id: nanoid(),
         Name: "Chic Shine Lip Glow Oil",
         price: " $20.00 USD",
         image: "./Lipcare/lip oil.jpg",
     },
     {
-        id: 2,
+        id: nanoid(),
         Name: "Kissable Cushion Lip Mask",
         price: " $25.00 USD",
         image: "./Lipcare/lipmask.jpg",
     },
     {
-        id: 3,
+        id: nanoid(),
         Name: "Sheer Elegance Lipstick",
         price: " $25.00 USD",
         image: "./Lipcare/lipmask2.jpg",
     },
     {
-        id: 4,
+        id: nanoid(),
         Name: "Juicy Melon Lip Scrub",
         price: " $15.00 USD",
         image: "./Lipcare/scrub1-Photoroom.jpg",
     },
     {
-        id: 5,
+        id: nanoid(),
         Name: "Juicy Berry Lip Scrub",
         price: " $15.00 USD",
         image: "./Lipcare/scrub2-Photoroom.jpg",
     },
     {
-        id: 6,
+        id: nanoid(),
         Name: "Soft Tint Lip Mask",
         price: " $20.00 USD",
         image: "./Lipcare/tint balm.jpg",
