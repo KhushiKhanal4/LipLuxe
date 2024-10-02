@@ -1,8 +1,18 @@
 import React from 'react'
 import Categories from './Hero/Categories'
 import lipstick from '../data/lipstick';
+import { useDispatch } from 'react-redux';
+import { add } from './store/CartSlice';
 
 function Lipstick() {
+  const dispatch=useDispatch();
+
+  const addToCart =(product) => {
+
+    dispatch(add(product)) 
+
+  }
+
   const products = lipstick.map(product => {
     return (
       <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:px-10 lg:px-4 xl:px-20' key={product.id}> {/* Add unique key prop */}
@@ -23,6 +33,7 @@ function Lipstick() {
                   {product.price}
                 </span>
                 <button 
+                onClick={()=> addToCart(product)}
                 className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br  transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-1/2 shadow-md shadow-red-950">
                   Add to cart
                 </button>

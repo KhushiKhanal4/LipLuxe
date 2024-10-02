@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaUser, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
 import BurgerNavItem from './BurgerNavItem';
-
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
@@ -12,10 +12,12 @@ const NavBar = () => {
     setIsOpen(!isOpen);
   };
 
+  const cartProducts = useSelector(state => state.cart)
+
   return (
 
     <nav
-      
+
       className="bg-gradient-to-b from-red-400 to-[#ffffff00] shadow-lg py-4 font-playfair font-semibold">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,25 +31,25 @@ const NavBar = () => {
           <div className="hidden md:block">
 
             <div className="ml-10 flex items-baseline space-x-4">
-              
+
               <NavLink to="/"
-              className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
-               Home
+                className={({ isActive }) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 " : ""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+                Home
               </NavLink>
 
               <NavLink to="/LipCare"
-               className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
-              LipCare
+                className={({ isActive }) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 " : ""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+                LipCare
               </NavLink>
 
               <NavLink to="/LipGloss"
-               className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
-              LipGloss
+                className={({ isActive }) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 " : ""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+                LipGloss
               </NavLink>
 
               <NavLink to="/Lipstick"
-               className={ ({isActive}) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 ":""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
-              Lipstick
+                className={({ isActive }) => `text-gray-900 hover:bg-[#ffffff4d] hover:text-red-700 ${isActive ? "text-red-700 bg-[#ffffff4d]  border border-red-50 " : ""} hover:border hover:border-red-50 px-3 py-2 rounded-md text-lg font-bold transition duration-300 tracking-widest text-shadow-lg`}>
+                Lipstick
               </NavLink>
 
             </div>
@@ -65,13 +67,18 @@ const NavBar = () => {
                 <FaUser className="h-6 w-6" />
               </button>
 
-              
-              <NavLink to="/Cart">
-              <button className="ml-3 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
-                <span className="sr-only">View cart</span>
-                <FaShoppingCart className="h-6 w-6" />
-              </button>
-              </NavLink>
+              <div className='flex'>
+               
+                <NavLink to="/Cart">
+                  <button className=" ml-3 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
+                    <span className="sr-only">View cart</span>
+                    <FaShoppingCart className="h-6 w-6" />
+                  </button>
+                </NavLink>
+                 <div className=
+                'text-gray-800 bg-red-200 px-2.5  ml-2 rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
+
+              </div>
 
             </div>
 
@@ -103,27 +110,27 @@ const NavBar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 ">
 
             <NavLink to="/">
-            <BurgerNavItem
-              title={"Home"}
-            />
+              <BurgerNavItem
+                title={"Home"}
+              />
             </NavLink>
 
             <NavLink to="/LipCare">
-            <BurgerNavItem
-              title={"LipCare"}
-            />
+              <BurgerNavItem
+                title={"LipCare"}
+              />
             </NavLink>
 
             <NavLink to="/LipGloss">
-            <BurgerNavItem
-              title={"LipGloss"}
-            />
+              <BurgerNavItem
+                title={"LipGloss"}
+              />
             </NavLink>
 
             <NavLink to="/Lipstick">
-            <BurgerNavItem
-              title={"Lipstick"}
-            />
+              <BurgerNavItem
+                title={"Lipstick"}
+              />
             </NavLink>
 
           </div>
@@ -140,11 +147,13 @@ const NavBar = () => {
 
 
               <NavLink to="/Cart">
-              <button className="ml-auto flex-shrink-0 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
-                <span className="sr-only">View cart</span>
-                <FaShoppingCart className="h-6 w-6" />
-              </button>
+                <button className="ml-auto flex-shrink-0 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
+                  <span className="sr-only">View cart</span>
+                  <FaShoppingCart className="h-6 w-6" />
+                </button>
               </NavLink>
+              <div className=
+                'bg-red-100 text-gray-800 px-3 ml-2 rounded-full text-center font-bold text-xl '>{cartProducts.length}</div>
 
             </div>
 

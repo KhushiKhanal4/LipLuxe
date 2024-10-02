@@ -1,8 +1,17 @@
 import React from 'react';
 import Categories from './Hero/Categories';
 import lipcare from '../data/lipcare';
+import { useDispatch } from 'react-redux';
+import { add } from './store/CartSlice';
 
 function LipCare() {
+  const dispatch=useDispatch();
+
+  const addToCart =(product) => {
+
+    dispatch(add(product)) 
+
+  }
 
   const products = lipcare.map(product => {
     return (
@@ -24,6 +33,7 @@ function LipCare() {
                   {product.price}
                 </span>
                 <button 
+                onClick={()=> addToCart(product)}
                 className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br  transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-1/2 shadow-md shadow-red-950">
                   Add to cart
                 </button>

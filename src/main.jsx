@@ -9,6 +9,7 @@ import Lipgloss from './components/Lipgloss.jsx'
 import Lipstick from './components/Lipstick.jsx'
 import Cart from './components/Cart.jsx'
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
