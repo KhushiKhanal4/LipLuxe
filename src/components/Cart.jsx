@@ -1,10 +1,11 @@
-import React from 'react'
+import {React,useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { remove } from './store/CartSlice';
+import Modal from './Modal';
 
-function Cart() {
+function Cart() 
+{
   const productCart = useSelector(state => state.cart.items);
-
   const dispatch=useDispatch();
 
   const removeFromCart =(id) =>{
@@ -15,6 +16,9 @@ function Cart() {
     return accumulator + (parseFloat(product.price) || 0); 
   }, 0)
 
+  const [open, setOpen] = useState(false);
+  const [productToDelete, setProductToDelete] = useState(null); 
+
   const products = productCart.map(product => {
     return (
       
@@ -23,7 +27,7 @@ function Cart() {
         <div className="bg-gradient-to-br from-red-50 to-red-200 shadow-md rounded-lg overflow-hidden shadow-gray-400 sm:flex sm:flex-wrap sm:justify-between sm:items-center">
           
           {/* Image Section */}
-          <div className='px-6 pt-6 sm:p-6 sm:w-1/3 '>
+          <div className='px-6 pt-6 sm:p-6 sm:w-1/3'>
             <img 
               className="rounded-xl drop-shadow-xl w-full  h-auto object-cover" 
               src={product.image} 
@@ -42,13 +46,36 @@ function Cart() {
                 {product.price}
               </span>
               <button
-                onClick={() => removeFromCart(product.id)}
+                onClick={()=> {
+                  setProductToDelete(product.id); 
+                  setOpen(true);
+                } }
                 className="text-white bg-gradient-to-tr from-red-300 to-red-800 hover:bg-gradient-to-br transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-full sm:w-1/2 shadow-md shadow-red-950">
                 Remove item
               </button>
+
+              <Modal
+              open={open}
+              close={()=>setOpen(false)}
+              children={
+              <div>
+                  <h1 className='text-gray-800 text-center mx-4 mt-8 text-lg font-semibold'>Are you sure you want to delete this item from the cart?</h1>
+                  <div className='flex justify-between mx-12 my-7'>
+                     <button 
+                     onClick={()=>{
+                      setOpen(false); 
+                      removeFromCart(productToDelete)
+                    }}
+                     className='bg-gradient-to-l from-red-500 to-red-800 text-white font-medium py-1 px-4 rounded-md focus:ring-2 focus:ring-red-900 shadow-md shadow-red-800 hover:bg-gradient-to-t '>Remove</button>
+                     <button  
+                     onClick={()=>setOpen(false)}
+                     className='bg-gradient-to-l from-gray-500 to-gray-800 text-white font-medium py-1 px-4 rounded-md focus:ring-2 focus:ring-gray-700 shadow-md shadow-gray-500 hover:bg-gradient-to-t'>Cancel</button>
+                  </div>
+              </div>
+              }
+              />
             </div>
           </div>
-    
         </div>
       </div>
     </div>
