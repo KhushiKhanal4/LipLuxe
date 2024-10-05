@@ -72,18 +72,7 @@ const NavBar = () => {
                 <FaUser className="h-6 w-6" />
               </button>
 
-              <Modal
-                open={open}
-                close={() => setOpen(false)}
-                children={
-                  <div className='font-sans'>
-                    <h1 className='text-cyan-800 text-center mx-4 mt-8 text-xl font-bold'>Apology Notice</h1>
-
-                    <p className='text-grey-800  m-4 font-semibold'>I sincerely apologize for the inconvenience, but the login functionality is currently unavailable as the backend service is not yet implemented. This version of the application only includes the frontend portion for demo purposes.</p>
-
-                    <h4 className='text-grey-800  m-4 font-semibold'>Thank you for your understanding and patience.</h4>
-                  </div>
-                } />
+           
 
               <div className='flex'>
 
@@ -181,7 +170,18 @@ const NavBar = () => {
           </div>
 
         </div>
-      )}
+      )}   <Modal
+                open={open}
+                close={() => setOpen(false)}
+                children={
+                  <div className=' relative z-30 font-sans'>
+                    <h1 className='text-cyan-800 text-center mx-4 mt-8 text-xl font-bold'>Apology Notice</h1>
+
+                    <p className='text-grey-800  m-4 font-semibold'>I sincerely apologize for the inconvenience, but the login functionality is currently unavailable as the backend service is not yet implemented. This version of the application only includes the frontend portion for demo purposes.</p>
+
+                    <h4 className='text-grey-800  m-4 font-semibold'>Thank you for your understanding and patience.</h4>
+                  </div>
+                } />
 
     </nav>
   );
