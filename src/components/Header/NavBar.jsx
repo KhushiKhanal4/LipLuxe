@@ -3,16 +3,19 @@ import { FaUser, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa';
 import BurgerNavItem from './BurgerNavItem';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import Modal from '../Modal';
 
 const NavBar = () => {
   //state and function for Hmaburger menu
   const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const cartProducts = useSelector(state => state.cart.items)
+
 
   return (
 
@@ -61,22 +64,37 @@ const NavBar = () => {
             <div className="ml-4 flex items-center md:ml-2">
 
 
-              <button className="p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
+              <button
+                onClick={() => setOpen(true)}
+                className="p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
                 <span className="sr-only">Sign up</span>
                 {/*sr-only refers to screen readers only This class ensures that content is invisible to sighted users but remains available to assistive technologies */}
                 <FaUser className="h-6 w-6" />
               </button>
 
+              <Modal
+                open={open}
+                close={() => setOpen(false)}
+                children={
+                  <div className='font-sans'>
+                    <h1 className='text-cyan-800 text-center mx-4 mt-8 text-xl font-bold'>Apology Notice</h1>
+
+                    <p className='text-grey-800  m-4 font-semibold'>I sincerely apologize for the inconvenience, but the login functionality is currently unavailable as the backend service is not yet implemented. This version of the application only includes the frontend portion for demo purposes.</p>
+
+                    <h4 className='text-grey-800  m-4 font-semibold'>Thank you for your understanding and patience.</h4>
+                  </div>
+                } />
+
               <div className='flex'>
-               
+
                 <NavLink to="/Cart">
                   <button className=" ml-3 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
                     <span className="sr-only">View cart</span>
                     <FaShoppingCart className="h-6 w-6" />
                   </button>
                 </NavLink>
-                 <div className=
-                'text-gray-800 bg-red-200 px-2.5 ml-2 rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
+                <div className=
+                  'text-gray-800 bg-red-200 px-2.5 ml-2 rounded-full border border-gray-500 text-center font-bold text-xl font-sans'>{cartProducts.length}</div>
 
               </div>
 
@@ -140,10 +158,13 @@ const NavBar = () => {
             <div className="flex items-center px-5">
 
 
-              <button className="flex-shrink-0 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
+              <button
+                onClick={() => setOpen(true)}
+                className="flex-shrink-0 p-1 rounded-full text-gray-700 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition duration-300">
                 <span className="sr-only">Sign up</span>
                 <FaUser className="h-6 w-6" />
               </button>
+
 
 
               <NavLink to="/Cart">
