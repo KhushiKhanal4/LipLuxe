@@ -13,6 +13,8 @@ function LipCare() {
 
   }
 
+  const [open, setOpen] = useState(false);
+
   const products = lipcare.map(product => {
     return (
       <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:px-10 lg:px-4 xl:px-20' key={product.id}> {/* Add unique key prop */}
@@ -33,10 +35,12 @@ function LipCare() {
                   ${product.price} USD
                 </span>
                 <button 
-                onClick={()=> addToCart(product)}
+                onClick={()=>{ addToCart(product); setOpen(true)}}
                 className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-1/2 shadow-md shadow-red-950">
                   Add to cart
                 </button>
+
+                
               </div>
             </div>
           </div>
