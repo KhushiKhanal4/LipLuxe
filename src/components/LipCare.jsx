@@ -1,21 +1,34 @@
-import {React,useState} from 'react';
+import { React } from 'react';
 import Categories from './Hero/Categories';
 import lipcare from '../data/lipcare';
 import { useDispatch } from 'react-redux';
 import { add } from './store/CartSlice';
-import Modal from './Modal';
-import { NavLink } from 'react-router-dom';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function LipCare() {
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
 
-  const addToCart =(product) => {
+  const addToCart = (product) => {
 
-    dispatch(add(product)) 
+    dispatch(add(product))
 
   }
 
-  const [open, setOpen] = useState(false);
+  const notify = () => {
+    toast.success("Item has been added to the cart!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Slide,
+    });
+  }
 
   const products = lipcare.map(product => {
     return (
@@ -24,7 +37,7 @@ function LipCare() {
           <div className="bg-gradient-to-br from-red-50 to-red-200 shadow-md rounded-lg overflow-hidden shadow-gray-400 sm:w-72 xl:w-80">
 
             <div className='p-6'>
-              <img className="rounded-xl drop-shadow-xl w-full h-auto object-cover" src={product.image} alt={product.Name} /> 
+              <img className="rounded-xl drop-shadow-xl w-full h-auto object-cover" src={product.image} alt={product.Name} />
             </div>
 
             <div className="px-6 pb-5">
@@ -36,34 +49,16 @@ function LipCare() {
                 <span className="text-lg sm:text-2xl font-bold text-gray-800 py-2">
                   ${product.price} USD
                 </span>
-                <button 
-                onClick={()=>{ addToCart(product); setOpen(true)}}
-                className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-1/2 shadow-md shadow-red-950">
+                <button
+                  onClick={() => { addToCart(product); notify() }}
+                  className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-1/2 shadow-md shadow-red-950">
                   Add to cart
                 </button>
-                <Modal
-                  open={open}
-                  close={() => setOpen(false)}
-                  children={
-                    <div>
-                      <h1 className='text-gray-800 text-center mx-4 mt-8 text-lg font-semibold'>Item added to the cart </h1>
-                      <div className='flex justify-between mx-12 my-7 '>
-                        <NavLink to='/cart'>
-                        <button
-                          className='bg-gradient-to-l from-green-500 to-green-800 text-sm sm:text-md text-white font-medium py-1 px-4 rounded-md focus:ring-2 focus:ring-green-900 shadow-md shadow-green-800 mr-4 hover:bg-gradient-to-t '>Check Cart</button>
-                          </NavLink>
-                        <button
-                          onClick={() => setOpen(false)}
-                          className='bg-gradient-to-l from-gray-500 to-gray-800 text-sm sm:text-md text-white font-medium py-1 px-4 rounded-md focus:ring-2 focus:ring-gray-700 ml-4 shadow-md shadow-gray-500 hover:bg-gradient-to-t'>Cancel</button>
-                      </div>
-                    </div>
-                  }/>
-                  
-                </div>
-                
+              </div>
             </div>
           </div>
         </div>
+        
       </div>
     );
   });
@@ -76,15 +71,16 @@ function LipCare() {
         desc={"Discover our range of lip care products tailored to meet your every need."}
       />
 
-      <h1 
-      id='shop'
-      className='font-extrabold bg-gradient-to-r from-gray-700 to-red-600 text-transparent bg-clip-text font-cinzel text-xl sm:text-2xl leading-tight text-center mb-7'>
+      <h1
+        id='shop'
+        className='font-extrabold bg-gradient-to-r from-gray-700 to-red-600 text-transparent bg-clip-text font-cinzel text-xl sm:text-2xl leading-tight text-center mb-7'>
         6 Products
       </h1>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4'> 
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4'>
         {products}
       </div>
+      <ToastContainer/>
     </>
   );
 }

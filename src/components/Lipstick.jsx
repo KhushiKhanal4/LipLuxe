@@ -3,8 +3,8 @@ import Categories from './Hero/Categories'
 import lipstick from '../data/lipstick';
 import { useDispatch } from 'react-redux';
 import { add } from './store/CartSlice';
-import Modal from './Modal';
-import { NavLink } from 'react-router-dom';
+import { ToastContainer, toast, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Lipstick() {
   const dispatch=useDispatch();
@@ -14,7 +14,19 @@ function Lipstick() {
     dispatch(add(product)) 
 
   }
-  const [open, setOpen] = useState(false);
+ const notify = () => {
+    toast.success("Item has been added to the cart!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Slide,
+    });
+  }
 
   const products = lipstick.map(product => {
     return (
@@ -36,27 +48,11 @@ function Lipstick() {
                   ${product.price} USD
                 </span>
                 <button 
-                onClick={()=>{ addToCart(product); setOpen(true)}}
+                onClick={()=>{ addToCart(product); notify()}}
                 className="text-gray-900 bg-gradient-to-tr from-gray-300 to-red-400 hover:bg-gradient-to-br  transform transition-transform duration-300 hover:scale-105 focus:scale-105 active:scale-90 font-medium rounded-lg text-md px-4 py-3 mt-2 w-1/2 shadow-md shadow-red-950">
                   Add to cart
                 </button>
-                <Modal
-                  open={open}
-                  close={() => setOpen(false)}
-                  children={
-                    <div>
-                      <h1 className='text-gray-800 text-center mx-4 mt-8 text-lg font-semibold'>Item added to the cart </h1>
-                      <div className='flex justify-between mx-12 my-7 '>
-                        <NavLink to='/cart'>
-                        <button
-                          className='bg-gradient-to-l from-green-500 to-green-800 text-sm sm:text-md text-white font-medium py-1 px-4 rounded-md focus:ring-2 focus:ring-green-900 shadow-md shadow-green-800 mr-4 hover:bg-gradient-to-t '>Check Cart</button>
-                          </NavLink>
-                        <button
-                          onClick={() => setOpen(false)}
-                          className='bg-gradient-to-l from-gray-500 to-gray-800 text-sm sm:text-md text-white font-medium py-1 px-4 rounded-md focus:ring-2 focus:ring-gray-700 ml-4 shadow-md shadow-gray-500 hover:bg-gradient-to-t'>Cancel</button>
-                      </div>
-                    </div>
-                  }/>
+               
               </div>
             </div>
           </div>
@@ -77,6 +73,7 @@ function Lipstick() {
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4'>
         {products}
       </div>
+      <ToastContainer/>
     </>
   )
 }
